@@ -11,4 +11,7 @@ products=products;
 share():void {
   alert('공유 됨')
 }
+onNotify(){
+  alert('알림 신청 완료')
+}
 }

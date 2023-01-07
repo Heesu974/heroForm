@@ -4,5 +4,5 @@
     <button (click)="share()">share</button>
 
     <!-- <app-product-alerts [hidden]="product.price < 700"></app-product-alerts> -->
-   <app-product-alerts [product]="product"></app-product-alerts>
+   <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
 </div>
