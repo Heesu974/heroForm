@@ -1,0 +1,8 @@
+<h2>Products</h2>
+<div *ngFor="let product of products">
+    {{product.name}}
+    <button (click)="share()">share</button>
+
+    <!-- <app-product-alerts [hidden]="product.price < 700"></app-product-alerts> -->
+   <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
+</div>
