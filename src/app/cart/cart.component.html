@@ -1,0 +1,8 @@
+<div *ngIf="items">
+    <div *ngFor="let item of items">
+        {{item.name}}
+    </div>
+</div>
+<div [hidden]="items">
+    <span>장바구니가 비어 있음</span>
+</div>
