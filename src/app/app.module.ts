@@ -13,6 +13,9 @@ import {RouterModule} from '@angular/router';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 
+import {HttpClientModule} from '@angular/common/http';
+import { ShippingComponent } from './shipping/shipping.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +24,16 @@ import { CartComponent } from './cart/cart.component';
     ProductListComponent,
     ProductAlertsComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([{
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
       path: '', component: ProductListComponent,
       
     }
@@ -35,7 +41,8 @@ import { CartComponent } from './cart/cart.component';
 {
   path: 'products/:productId', component: ProductDetailsComponent
 },
-{path: 'cart', component: CartComponent}
+{path: 'cart', component: CartComponent},
+{path: 'shipping', component: ShippingComponent}
 ])
   ],
   providers: [],

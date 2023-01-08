@@ -2,7 +2,16 @@
 <div *ngFor="let item of items">
     <span>{{item.name}}</span>
     <span>{{item.price | currency}}</span>
+
+    
 </div>
 <div [hidden]="items">
     <span>장바구니가 비어 있음</span>
 </div>
+
+<div>
+    <a href="" [routerLink]="['/shipping']">shipping cost</a>
+</div>
+
+<!-- 
+httpClient는 외부 api에 접근해서 스트림 형태로 데이터를 받아오는 서비스 -->
