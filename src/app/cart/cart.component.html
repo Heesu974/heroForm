@@ -13,5 +13,21 @@
     <a href="" [routerLink]="['/shipping']">shipping cost</a>
 </div>
 
+<form action="" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    
+    <div>
+        <label for="name">
+            <input type="text" id="name" formControlName="name">
+        </label>
+    </div>
+    <div>
+        <label for="address">
+            <input type="text" id="address" formControlName="address">
+        </label>
+    </div>
+    
+    <button type="submit">Purchase</button>
+</form>
+
 <!-- 
 httpClient는 외부 api에 접근해서 스트림 형태로 데이터를 받아오는 서비스 -->

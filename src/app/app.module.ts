@@ -16,6 +16,8 @@ import { CartComponent } from './cart/cart.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { ShippingComponent } from './shipping/shipping.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
       path: '', component: ProductListComponent,
