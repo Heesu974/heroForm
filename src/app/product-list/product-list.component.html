@@ -1,9 +1,26 @@
 <h2>Products</h2>
 <div *ngFor="let product of products">
+
     <a href="" [routerLink]="['/products', product.id]" [title]="product.name+ 'details'">{{product.name}}</a>
     
-    <button (click)="share()">share</button>
 
-    <!-- <app-product-alerts [hidden]="product.price < 700"></app-product-alerts> -->
-   <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
+    <button (click)="share()">share</button>
+<app-product-alerts
+[product]="product"
+(notify)="onNotify()"
+></app-product-alerts>
+
+
 </div>
+
+<!-- //구현 기능:
+1. 브라우저 주소 표시줄에 url을 입력하면 해당 제품 화면으로 이동
+2. 링크를 클릭하여 화면 전환 -->
+
+<!-- url경로와 컴포넌트는 연결했는데,
+필요한게 product.name을 클릭해서 productDetail component로 넘어갈 때,
+product.id를 함께 넘기는게 관건임
+이걸 url을 통해 할 수 있는거. url에서 product 정보 추출해서 그걸로 출력하면 됨
+-->
+
+
