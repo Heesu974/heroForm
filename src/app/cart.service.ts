@@ -12,7 +12,7 @@ export class CartService {
 
   constructor(private http: HttpClient) { }
   items: Product[]=[];
-  
+
   addToCart(product:Product){
     this.items.push(product);
   }
