@@ -1,3 +1,4 @@
-<p *ngIf="product.price > 700">
-    <button (click)="notify.emit()">notify me</button>
-</p>
+<div *ngIf="product && product.price > 700">
+  <button #testValue (click)="notify.emit(testValue.value);">Notify me</button>
+<!-- 버튼을 클릭했으면 그 event를 emitㅎ한다 ? 그걸 ㅇ어떻게 Output으로 받지?  -->
+</div>
