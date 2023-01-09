@@ -1,12 +1,9 @@
 <h2>Products</h2>
 <div *ngFor="let product of products">
 
-<a href="" [routerLink]="['products/', product.id]">
-  <h1>{{product.name}}</h1>
-</a>
+    <a href="" [routerLink]="['/products', product.id]" [title]="product.name+ 'details'">{{product.name}}</a>
+    
 
-    <h3>{{product.price | currency}}</h3>
-    <h4>{{product.description}}</h4>
     <button (click)="share()">share</button>
 <app-product-alerts
 [product]="product"
