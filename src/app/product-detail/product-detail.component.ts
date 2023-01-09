@@ -1,6 +1,8 @@
+
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import {Product, products} from '../product';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,7 +15,8 @@ product: Product | undefined;
 
 //먼저 constructor()(생성자) 안에 activatedRoute 인스턴스를 주입.
 constructor(
-  private route: ActivatedRoute
+  private route: ActivatedRoute,
+  private cartservice: CartService,
 
 ){}
 
@@ -25,6 +28,13 @@ ngOnInit() {
   //find the product that correspond with the id provided in route
   this.product = products.find(product => product.id === productIdFromRoute);
 }
+addToCart(product:Product) {
+  this.cartservice.addToCart(product);
+
+  window.alert('장바구니에 상품이 저장되었습니다.')
+
 }
 
-//angular rotuer가 제공하는 activatedRoute와 Router, paramMap을 통해 url로부터 필요한 정보 추출 가능
+}
+
+
